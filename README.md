@@ -7,7 +7,7 @@ Don't forget to change SECRET_KEY in config.py if you deploy this on your own se
 ## Features
 
 * Minimal
-* :metal
+* :metal:
 * Post tagging
 
 Local Development
@@ -23,5 +23,5 @@ Then run:
 to start a development server.
 
 Browse to http://127.0.0.1:5000/init in order to create the first admin user with username: admin and pw: password .
-Once logged-in you can then change the credentials and create more users. Make sure to set the `DEBUG` and `TESTIN`G option in your config.py to `False` when you take your blog into prodcution.
+Once logged-in you can then change the credentials and create more users. Make sure to set the `DEBUG` and `TESTING` option in your config.py to `False` when you take your blog into prodcution.
 
