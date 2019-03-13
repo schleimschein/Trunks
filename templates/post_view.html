@@ -2,9 +2,6 @@
 
 {% block title %}View{% endblock %}
 
-{% block css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/bulma-switch.min.css') }}" media="all">
-{% endblock %}
 
 {% if post.published %}
   {% block left_to_body_column_not_in_column %}
@@ -22,7 +19,7 @@
       </div>
     {% endif %}
 
-    <div class="container">
+    <div class="container is-fluid">
 
         <span class="content is-pulled-right post-icons">
           {% if current_user.admin %}
