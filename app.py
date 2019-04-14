@@ -224,7 +224,7 @@ def blog(page):
     pages = Pagination(page, settings.posts_per_page, number_of_posts, 7)
 
     if not number_of_posts == 0:
-        return render_template('blog_list.html', posts_with_tags=posts_with_tags, pages=pages)
+        return render_template('blog.html', posts_with_tags=posts_with_tags, pages=pages)
     else:
         notice = "No posts yet  :/"
         return render_template('notice.html', notice=notice)
