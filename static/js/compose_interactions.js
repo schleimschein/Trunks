@@ -60,6 +60,7 @@
 
        postPreview.style.display = "block";
        postPreview.scrollIntoView();
+
 //     let  dateTime = JSON.parse(httpRequest.response)["date_time"];
 //     postPreviewCurrentDateTime.innerHTML = dateTime;
         };
@@ -79,7 +80,7 @@
       var editId = document.getElementsByName("post-edit-id")[0];
         if (typeof(editId) !== 'undefined' && editId != null) {
           editId = editId.value.trim();
-          if (confirm("Are you sure you want to delete post " + editId + "?")) {
+          if (confirm("Are you sure you want to delete post " + editId + " ?")) {
             var url = "/admin/posts/delete";
             var data = JSON.stringify({id: editId, was_edit: true});
 
