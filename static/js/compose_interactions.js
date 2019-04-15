@@ -39,11 +39,11 @@
      var postFormData = { };
      postFormData.title = postFormTitle.value.trim();
      postFormData.content_markdown = postFormEditor.value();
-     postFormData.tags = postFormTags.value.trim().split(',');
+     postFormData.tags = JSON.parse(postFormTags.value);
 
      // Http request: Flask translates markdown into html
      var url = "/admin/preview";
-     var httpRequest = new XMLHttpinput-tagifyRequest();
+     var httpRequest = new XMLHttpRequest();
      httpRequest.open('POST', url);
      httpRequest.setRequestHeader("Content-Type", "application/json");
      // If http request is success, set post title, description, content & tags and unhide it to preview
@@ -51,10 +51,10 @@
      httpRequest.onload = function () {
        var postPreviewContent_html = JSON.parse(httpRequest.response)["html"];
 
-       postPreviewHeading.innerHTML = postFormData.postTitle;
+       postPreviewHeading.innerHTML = postFormData.title;
        postPreviewContent.innerHTML = postPreviewContent_html;
        for (var i = 0; i < postFormData.tags.length; i++) {
-         var postPreviewTag_html = '<a class="level-item tag is-primary post-tag">' + postFormData.tags[i] + '</a>';
+         var postPreviewTag_html = '<a class="level-item tag is-primary post-tag">' + postFormData.tags[i]["value"] + '</a>';
          postPreviewTags.insertAdjacentHTML('beforeend', postPreviewTag_html);
        }
 

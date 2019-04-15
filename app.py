@@ -382,7 +382,7 @@ def search_view(query, page):
 @admin_required
 def preview():
     data = request.get_json()
-    html = markdown.markdown(data['postContent_markdown'], extensions=[GithubMarkdown()])
+    html = markdown.markdown(data['content_markdown'], extensions=[GithubMarkdown()])
     date_time = datetime.datetime.now().strftime("%B %d, %Y")
     return jsonify(html=html, date_time=date_time)
 
