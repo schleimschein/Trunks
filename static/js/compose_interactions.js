@@ -59,7 +59,7 @@
        }
 
        postPreview.style.display = "block";
-       postPreviewBox.scrollIntoView();
+       postPreview.scrollIntoView();
 //     let  dateTime = JSON.parse(httpRequest.response)["date_time"];
 //     postPreviewCurrentDateTime.innerHTML = dateTime;
         };
